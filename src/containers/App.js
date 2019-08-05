@@ -6,7 +6,6 @@ import Scroll from "../components/Scroll";
 import { robots } from "../robots";
 
 
-
 class App extends Component {
 
 constructor() {
@@ -39,26 +38,21 @@ onSearchChange =(event)=> {
     
       return robot.name.toLowerCase().includes(this.state.searchfeild.toLowerCase())
     });
-  if (this.state.robots.length === 0) {
-    return <h1>Loading</h1>
-  } else {
-    
-  
-    console.log(filteredRobots);
 
-  return (
+  return (this.state.robots.length === 0)? <h1>Loading...</h1> : 
+    
+   (
     <div className='tc'>
       <h1 className='f1'> Monsters</h1>
       <Searchbox searchChange ={this.onSearchChange}/>
-      <Scroll>
+      {/* <Scroll> */}
       <CardList robots={filteredRobots} />
-      </Scroll>
+      {/* </Scroll> */}
     </div>
   );
 
 
   }
-}
 };
 
 export default App;
