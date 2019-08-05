@@ -23,6 +23,22 @@
   color: #61dafb;
 }
 
+
+@font-face {
+  font-family: 'Adventure Time Logo Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Adventure Time Logo Regular'), url('Adventure Time Logo.woff') format('woff');
+  }
+
+  h1{
+    font-family: 'Adventure Time Logo Regular';
+    font-weight:200;
+
+  }
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

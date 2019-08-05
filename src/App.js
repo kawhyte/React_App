@@ -18,23 +18,23 @@ constructor() {
 
 onSearchChange =(event)=> {
   this.setState( {searchfeild: event.target.value});
-
-  const filteredRobots = this.state.robots.filter(robot =>{
-    
-    return robot.name.toLowerCase().includes(this.state.searchfeild.toLowerCase())
-  });
-  console.log(event.target.value);
-  console.log(filteredRobots);
-
 }
 
 
   render(){
+
+    const filteredRobots = this.state.robots.filter(robot =>{
+    
+      return robot.name.toLowerCase().includes(this.state.searchfeild.toLowerCase())
+    });
+  
+    console.log(filteredRobots);
+
   return (
     <div className='tc'>
-      <h1> Monsters</h1>
+      <h1 className='f1'> Monsters</h1>
       <Searchbox searchChange ={this.onSearchChange}/>
-      <CardList robots={this.state.robots} />
+      <CardList robots={filteredRobots} />
     </div>
   );
 
